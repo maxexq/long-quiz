@@ -1,7 +1,10 @@
+import HistoryCard from "@/components/dashboard/HistoryCard";
 import QuizMeCard from "@/components/dashboard/QuizMeCard";
 import { getAuthSession } from "@/lib/nextauth";
 import { redirect } from "next/navigation";
 import React from "react";
+import HotTopics from "./HotTopics";
+import RecentActivies from "./RecentActivies";
 
 type Props = {};
 
@@ -21,8 +24,12 @@ const Dashboard = async (props: Props) => {
       </div>
       <div className="mt-4 grid gap-4 md:grid-cols-2">
         <QuizMeCard />
+        <HistoryCard />
       </div>
-      <div className="mt-4 grid gap-4 md:grid-cols-2"></div>
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        <HotTopics />
+        <RecentActivies />
+      </div>
     </main>
   );
 };
